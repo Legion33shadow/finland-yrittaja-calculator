@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Finland Yrittäjä Calculator 2026 — YEL Pension + Income Tax for Self-Employed</title>
+<meta name="description" content="Calculate exact monthly costs for Finnish self-employed: YEL pension insurance, income tax, municipal tax, health insurance. Real numbers for Finnish entrepreneurs 2026.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5382997898313669" crossorigin="anonymous"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Finland Yrittäjä YEL Calculator 2026","description":"YEL pension + income tax calculator for Finnish self-employed entrepreneurs (yrittäjä)","url":"https://Legion33shadow.github.io/finland-yrittaja-calculator/","applicationCategory":"FinanceApplication","operatingSystem":"All"}</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',sans-serif;background:#0a1628;color:#e2e8f0;min-height:100vh}
+.wrap{max-width:720px;margin:0 auto;padding:24px 16px}
+h1{font-size:1.6rem;font-weight:700;color:#60a5fa;margin-bottom:8px}
+.sub{color:#94a3b8;font-size:.9rem;margin-bottom:24px}
+.card{background:#162032;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #1e3a5f}
+label{display:block;color:#cbd5e1;font-size:.85rem;margin-bottom:6px;margin-top:16px;font-weight:600}
+input,select{width:100%;padding:10px 14px;border-radius:8px;border:1px solid #1e3a5f;background:#0a1628;color:#f1f5f9;font-size:1rem}
+input:focus,select:focus{outline:2px solid #60a5fa;border-color:#60a5fa}
+.btn{width:100%;margin-top:20px;padding:14px;border:none;border-radius:8px;background:#60a5fa;color:#0a1628;font-size:1.1rem;font-weight:700;cursor:pointer}
+.btn:hover{background:#3b82f6}
+.hidden{display:none}
+.result-card{background:#0a1628;border-radius:10px;padding:16px;margin-top:12px;border:1px solid #60a5fa}
+.r-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #162032;font-size:.95rem}
+.r-row:last-child{border-bottom:none}
+.r-label{color:#94a3b8}
+.r-val{font-weight:700;color:#f1f5f9}
+.r-val.red{color:#f87171}
+.r-val.green{color:#4ade80}
+.r-val.gold{color:#fbbf24}
+.shock{text-align:center;padding:20px;background:#162032;border-radius:10px;margin:16px 0}
+.shock-num{font-size:3rem;font-weight:900;color:#60a5fa}
+.shock-label{color:#94a3b8;font-size:.9rem;margin-top:4px}
+.warn-box{background:#0d1f3a;border:1px solid #60a5fa;border-radius:8px;padding:12px 16px;margin-top:12px;color:#bfdbfe;font-size:.88rem}
+.inverse{background:#0a1628;border:1px solid #4ade80;border-radius:8px;padding:16px;margin-top:16px}
+.inverse h3{color:#4ade80;margin-bottom:10px}
+.share-row{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.share-btn{flex:1;padding:10px;border-radius:8px;border:none;cursor:pointer;font-weight:600;font-size:.85rem;min-width:100px}
+.s-reddit{background:#ff4500;color:#fff}
+.s-wa{background:#25d366;color:#fff}
+.s-tw{background:#1d9bf0;color:#fff}
+.s-copy{background:#475569;color:#fff}
+.lead-box{background:#162032;border-radius:10px;padding:20px;margin-top:20px;border:1px solid #4ade80}
+.lead-box h3{color:#4ade80;margin-bottom:10px}
+.lead-row{display:flex;gap:8px;margin-top:10px}
+.lead-row input{flex:1}
+.lead-row button{padding:10px 18px;border:none;border-radius:8px;background:#4ade80;color:#0a1628;font-weight:700;cursor:pointer;white-space:nowrap}
+.faq{margin-top:24px}
+.faq details{background:#162032;border-radius:8px;padding:14px;margin-bottom:8px;border:1px solid #1e3a5f}
+.faq summary{cursor:pointer;font-weight:600;color:#60a5fa;font-size:.95rem}
+.faq p{margin-top:10px;color:#94a3b8;font-size:.88rem;line-height:1.6}
+.social-proof{background:#0d1f3a;border-radius:10px;padding:14px 18px;margin-bottom:20px;border-left:3px solid #60a5fa}
+.sp-num{font-size:1.4rem;font-weight:900;color:#60a5fa}
+.sp-text{color:#94a3b8;font-size:.85rem}
+footer{text-align:center;color:#475569;font-size:.78rem;margin-top:32px;padding-top:16px;border-top:1px solid #162032}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>🇫🇮 Finland Yrittäjä Calculator 2026</h1>
+<p class="sub">YEL pension insurance + income tax + municipal tax + health insurance — exact monthly costs for Finnish self-employed</p>
+
+<div class="social-proof">
+  <div class="sp-num">~330,000</div>
+  <div class="sp-text">self-employed entrepreneurs in Finland — most underestimate their YEL cost by 30–40%. Calculate your real numbers.</div>
+</div>
+
+<div class="card" id="step1">
+  <label>Annual gross revenue (€)</label>
+  <input type="number" id="revenue" value="60000" min="5000" max="500000">
+
+  <label>Business expenses (€/year)</label>
+  <input type="number" id="expenses" value="10000" min="0">
+
+  <label>Municipality (approximate municipal tax rate)</label>
+  <select id="muni">
+    <option value="0.195">Helsinki (19.5%)</option>
+    <option value="0.195">Espoo (19.5%)</option>
+    <option value="0.195">Vantaa (19.5%)</option>
+    <option value="0.2175">Tampere (21.75%)</option>
+    <option value="0.215">Turku (21.5%)</option>
+    <option value="0.22">Oulu (22.0%)</option>
+    <option value="0.215">Jyväskylä (21.5%)</option>
+    <option value="0.21">Average (21.0%)</option>
+  </select>
+
+  <label>YEL income (€/year) — your declared entrepreneurial income</label>
+  <input type="number" id="yel_income" value="35000" min="8575" max="200000">
+  <small style="color:#64748b;font-size:.78rem">Min 2026: €8,575/yr. Affects your pension AND income tax base.</small>
+
+  <label>Years in business (for YEL discount)</label>
+  <select id="yel_years">
+    <option value="1">Under 4 years (22% discount)</option>
+    <option value="5">4 years or more (0% discount)</option>
+  </select>
+
+  <button class="btn" onclick="calcFI()">Calculate my real monthly cost →</button>
+</div>
+
+<div class="card hidden" id="results">
+  <h2 style="color:#60a5fa;margin-bottom:16px">📊 Your 2026 Results</h2>
+
+  <div class="shock">
+    <div class="shock-num" id="shock-num">€0</div>
+    <div class="shock-label" id="shock-label">real monthly take-home after all deductions</div>
+  </div>
+
+  <div class="result-card">
+    <div class="r-row"><span class="r-label">Gross revenue</span><span class="r-val" id="r-rev">—</span></div>
+    <div class="r-row"><span class="r-label">Business expenses</span><span class="r-val green" id="r-exp">—</span></div>
+    <div class="r-row"><span class="r-label">Net income (verotettava tulo)</span><span class="r-val" id="r-net">—</span></div>
+    <div class="r-row"><span class="r-label">YEL pension contribution</span><span class="r-val red" id="r-yel">—</span></div>
+    <div class="r-row"><span class="r-label">YEL rate used</span><span class="r-val" id="r-yel-rate">—</span></div>
+    <div class="r-row"><span class="r-label">State income tax (valtionvero)</span><span class="r-val red" id="r-state">—</span></div>
+    <div class="r-row"><span class="r-label">Municipal tax (kunnallisvero)</span><span class="r-val red" id="r-muni">—</span></div>
+    <div class="r-row"><span class="r-label">Health insurance (sairausvakuutus)</span><span class="r-val red" id="r-health">—</span></div>
+    <div class="r-row"><span class="r-label">Total deducted / year</span><span class="r-val red" id="r-total">—</span></div>
+    <div class="r-row" style="background:#0a1628;border-radius:6px;padding:10px">
+      <span class="r-label" style="color:#f1f5f9;font-weight:700">TAKE-HOME / year</span>
+      <span class="r-val green" id="r-takehome">—</span>
+    </div>
+    <div class="r-row"><span class="r-label">Take-home / month</span><span class="r-val green" id="r-monthly">—</span></div>
+    <div class="r-row"><span class="r-label">Effective total rate</span><span class="r-val red" id="r-rate">—</span></div>
+  </div>
+
+  <div class="warn-box" id="yel-warn">
+    ℹ️ <strong>YEL shock:</strong> Your YEL income is the base for your future pension AND your income tax. Setting it too low saves money now but drastically reduces your pension rights. Recommended minimum: 60–70% of your net revenue.
+  </div>
+
+  <div class="inverse">
+    <h3>💡 How to reduce your total cost legally</h3>
+    <div id="inverse-tips" style="color:#93c5fd;font-size:.88rem;line-height:1.8"></div>
+  </div>
+
+  <div class="share-row">
+    <button class="share-btn s-reddit" onclick="shareReddit()">Reddit</button>
+    <button class="share-btn s-wa" onclick="shareWhatsApp()">WhatsApp</button>
+    <button class="share-btn s-tw" onclick="shareTwitter()">Twitter</button>
+    <button class="share-btn s-copy" onclick="copyResult()">Copy</button>
+  </div>
+</div>
+
+<div class="lead-box hidden" id="leadbox">
+  <h3>📋 Get the YEL optimization guide + tax calendar 2026 (free)</h3>
+  <p style="color:#94a3b8;font-size:.88rem">Free email: YEL income setting strategy · deductible expenses checklist · quarterly instalment schedule (ennakkovero)</p>
+  <div class="lead-row">
+    <input type="email" id="lead-email" placeholder="sinun@sahkoposti.fi">
+    <button onclick="submitLead()">Send →</button>
+  </div>
+  <p id="lead-msg" style="color:#4ade80;font-size:.82rem;margin-top:8px;display:none">✓ Sent! Check your inbox.</p>
+</div>
+
+<ins class="adsbygoogle" style="display:block;margin:20px 0" data-ad-client=ca-pub-5382997898313669" data-ad-slot="AUTO" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+
+<div class="faq">
+  <h2 style="color:#60a5fa;margin-bottom:16px;font-size:1.1rem">Usein kysytyt kysymykset (FAQ)</h2>
+  <details><summary>What is YEL and why is it mandatory?</summary>
+  <p>YEL (Yrittäjän eläkevakuutus) is the mandatory pension insurance for self-employed people in Finland. It is required if you earn over €8,575/year from self-employment and are between 18–67 years old. Unlike an employee, you pay both the employee and employer portions. The 2026 rate is 24.1% (or 18.08% with the new entrepreneur discount for the first 4 years under the 2023 reform).</p></details>
+  <details><summary>How does YEL income affect my pension?</summary>
+  <p>Your YEL income is the direct basis for your future pension calculation. Every euro of declared YEL income = pension rights accruing at 1.5% per year. Setting it at €20,000 when you earn €80,000 means your pension will be approximately 75% lower than if you set it at market value. Finnish pension experts generally recommend setting YEL income at the salary equivalent of your work.</p></details>
+  <details><summary>Can I deduct YEL contributions from taxes?</summary>
+  <p>Yes — 100% of your YEL contributions are deductible from your taxable income (both state and municipal tax). This partially offsets the cost. However, the contribution is calculated on YEL income, which is a separate declared amount from your actual revenue.</p></details>
+  <details><summary>What is ennakkovero (advance tax)?</summary>
+  <p>Finnish self-employed pay income tax in advance via ennakkovero instalments, typically monthly or bi-monthly. You apply for an advance tax card from Vero (Finnish Tax Authority). If you overpay, you get a refund (veronpalautus). If you underpay, you pay back-tax (jäännösvero) plus interest. Always set your ennakkovero slightly above your expected tax to avoid penalties.</p></details>
+  <details><summary>What expenses can I deduct as a Finnish yrittäjä?</summary>
+  <p>Deductible expenses include: home office (proportional rent + utilities), phone and internet (business %), travel (actual cost or Vero mileage rate €0.57/km in 2026), equipment, software, professional development courses, accounting fees, and subcontractor costs. Keep all receipts — Vero audits are data-driven and efficient.</p></details>
+  <details><summary>Is this calculator accurate for all business forms?</summary>
+  <p>This calculator is accurate for toiminimi (sole trader / individual entrepreneur — liikkeen- ja ammatinharjoittaja). For osakeyhtiö (Oy / limited company), taxation is different — corporate tax 20% + dividend taxation applies. If operating as an Oy, the optimization logic is entirely different and not covered here.</p></details>
+</div>
+
+<footer>
+  <p>Based on Vero.fi and ETK (Eläketurvakeskus) 2026 rates. Not tax advice. Verify with a Finnish kirjanpitäjä (accountant).</p>
+  <p style="margin-top:6px"><a href="privacy.html" style="color:#475569">Privacy Policy</a></p>
+</footer>
+</div>
+
+<script>
+// 2026 FINLAND STATE TAX BRACKETS (valtionvero, earned income)
+const STATE_BRACKETS = [
+    [20200, 0],
+    [11000, 0.0625],
+    [17600, 0.1775],
+    [7600,  0.2125],
+    [Infinity, 0.3150]
+];
+
+function taxFromBrackets(income, brackets) {
+    let tax = 0, remaining = Math.max(0, income);
+    for (let [size, rate] of brackets) {
+        let chunk = Math.min(remaining, size);
+        tax += chunk * rate;
+        remaining -= chunk;
+        if (remaining <= 0) break;
+    }
+    return tax;
+}
+
+function animateCounter(el, target, prefix, suffix) {
+    let duration = 1400, step = 16;
+    let inc = target / (duration / step);
+    let current = 0;
+    let timer = setInterval(function() {
+        current = Math.min(current + inc, target);
+        el.textContent = prefix + Math.round(current).toLocaleString('fi-FI') + suffix;
+        if (current >= target) clearInterval(timer);
+    }, step);
+}
+
+function fmtE(n) { return "€" + Math.round(n).toLocaleString('fi-FI'); }
+
+function calcFI() {
+    let revenue  = parseFloat(document.getElementById('revenue').value)    || 0;
+    let expenses = parseFloat(document.getElementById('expenses').value)   || 0;
+    let muniRate = parseFloat(document.getElementById('muni').value)       || 0.21;
+    let yelInc   = parseFloat(document.getElementById('yel_income').value) || 35000;
+    let yelYears = document.getElementById('yel_years').value;
+
+    // YEL rate 2026: 24.1% standard, 18.08% with new entrepreneur discount (first 4 yrs)
+    let yelRate = yelYears === "1" ? 0.1808 : 0.241;
+    let yel     = yelInc * yelRate;
+
+    // Net income for tax purposes
+    let netIncome = Math.max(0, revenue - expenses);
+    let taxableIncome = Math.max(0, netIncome - yel); // YEL is fully deductible
+
+    // State tax
+    let stateTax = taxFromBrackets(taxableIncome, STATE_BRACKETS);
+
+    // Municipal tax (kunnallisvero) on full taxable income
+    let muniTax = taxableIncome * muniRate;
+
+    // Health insurance (sairausvakuutus) 2026: ~1.53% on earned income
+    let healthIns = taxableIncome * 0.0153;
+
+    let totalDed = yel + stateTax + muniTax + healthIns;
+    let takeHome = revenue - totalDed - expenses;
+    let effRate  = revenue > 0 ? (totalDed / revenue) * 100 : 0;
+
+    document.getElementById('step1').style.display = 'none';
+    document.getElementById('results').classList.remove('hidden');
+    document.getElementById('leadbox').classList.remove('hidden');
+
+    document.getElementById('r-rev').textContent      = fmtE(revenue);
+    document.getElementById('r-exp').textContent      = fmtE(expenses);
+    document.getElementById('r-net').textContent      = fmtE(netIncome);
+    document.getElementById('r-yel').textContent      = fmtE(yel);
+    document.getElementById('r-yel-rate').textContent = (yelRate * 100).toFixed(2) + "%";
+    document.getElementById('r-state').textContent    = fmtE(stateTax);
+    document.getElementById('r-muni').textContent     = fmtE(muniTax);
+    document.getElementById('r-health').textContent   = fmtE(healthIns);
+    document.getElementById('r-total').textContent    = fmtE(totalDed);
+    document.getElementById('r-takehome').textContent = fmtE(takeHome);
+    document.getElementById('r-monthly').textContent  = fmtE(takeHome / 12);
+    document.getElementById('r-rate').textContent     = effRate.toFixed(1) + "%";
+
+    animateCounter(document.getElementById('shock-num'), takeHome / 12, '€', '/mo');
+
+    let tips = "";
+    if (yelInc < netIncome * 0.5) tips += "• Your YEL income is very low vs revenue — your future pension will be minimal<br>";
+    if (expenses < revenue * 0.15) tips += "• Track ALL deductible expenses: home office, phone, equipment, software, courses<br>";
+    tips += "• Set ennakkovero (advance tax) correctly to avoid jäännösvero interest<br>";
+    if (revenue > 50000) tips += "• Consider forming an Oy (Ltd company) — corporate tax 20% vs personal income tax up to 31.25% at high incomes<br>";
+    tips += "• YEL contributions are 100% tax-deductible — they reduce your state AND municipal tax<br>";
+    document.getElementById('inverse-tips').innerHTML = tips;
+
+    window._resultText = "Finnish yrittäjä real take-home 2026: " + fmtE(takeHome/12) + "/month after YEL, taxes, health insurance. Effective rate: " + effRate.toFixed(1) + "%. Calculator: https://" + window.location.hostname + window.location.pathname;
+}
+
+function shareReddit() {
+    let u = encodeURIComponent(window.location.href);
+    let t = encodeURIComponent("Finland self-employed real take-home calculator 2026 — YEL + income tax included");
+    window.open("https://www.reddit.com/submit?url=" + u + "&title=" + t, "_blank");
+}
+function shareWhatsApp() {
+    window.open("https://wa.me/?text=" + encodeURIComponent((window._resultText || '') + " " + window.location.href), "_blank");
+}
+function shareTwitter() {
+    window.open("https://twitter.com/intent/tweet?text=" + encodeURIComponent(window._resultText || window.location.href), "_blank");
+}
+function copyResult() {
+    navigator.clipboard.writeText(window._resultText || window.location.href).then(function() { alert("Copied!"); });
+}
+function submitLead() {
+    let email = document.getElementById('lead-email').value;
+    if (!email || !email.includes('@')) { alert("Please enter a valid email"); return; }
+    document.getElementById('lead-msg').style.display = 'block';
+    let fid = "";
+    if (fid && fid.length > 5) {
+        fetch("https://formspree.io/f/" + fid, {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({email: email, source: "finland-yrittaja", result: window._resultText || ""})
+        }).catch(function(){});
+    }
+}
+</script>
+</body>
+</html>
