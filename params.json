@@ -1,0 +1,21 @@
+{
+  "slug": "finland-yrittaja-calculator",
+  "country": "FI",
+  "domain": "tax_arbitrage",
+  "law_reference": "Yritt\u00e4j\u00e4n el\u00e4kelaki (YEL) & Verohallinnon ohjeet",
+  "sources": [
+    "https://www.vero.fi",
+    "https://www.etk.fi"
+  ],
+  "sources_health": {
+    "https://www.vero.fi": {
+      "status": 200,
+      "reachable": true
+    },
+    "https://www.etk.fi": {
+      "status": 200,
+      "reachable": true
+    }
+  },
+  "signature_payload": "f321bb1a0987c6bf509d7c857e9b81bb943750ce80b8ecd2c32174674e682c24"
+}
