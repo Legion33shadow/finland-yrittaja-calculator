@@ -1,0 +1,12 @@
+{
+  "tool": "finland-yrittaja-calculator",
+  "country": "FI",
+  "category": "tax_labor",
+  "official_sources": [
+    "https://www.vero.fi/",
+    "https://www.yel.fi/",
+    "https://www.kela.fi/"
+  ],
+  "last_reviewed": "2026-09-29",
+  "source_status": "official_sources_listed_not_formula_verified"
+}

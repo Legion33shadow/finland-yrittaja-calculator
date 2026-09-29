@@ -1,0 +1,14 @@
+{
+  "slug": "finland-yrittaja-calculator",
+  "type": "calculator_or_tool",
+  "country": "FI",
+  "category": "tax_labor",
+  "official_sources": [
+    "https://www.vero.fi/",
+    "https://www.yel.fi/",
+    "https://www.kela.fi/"
+  ],
+  "claim_state": "method_unverified",
+  "phoenix_ready": false,
+  "limitations": "Finnish entrepreneur tax and YEL rules depend on income, status and year."
+}
